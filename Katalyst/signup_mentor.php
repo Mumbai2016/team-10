@@ -11,7 +11,7 @@
     <title>Creative - Bootstrap Admin Template</title>
 
     <!-- Bootstrap CSS -->    
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="owl_carousel/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="owl_carousel/owl-carousel/owl.theme.css">
 <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
@@ -79,7 +79,7 @@
       </header>      
       <!--header end-->
 
- <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+ <form class="well form-horizontal" action="mentor_valid.php" method="post"  id="mentor_signup">
 <fieldset>
 
 <!-- Form Name -->
@@ -92,8 +92,9 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+  <input name="ment_fname" id="ment_fname" placeholder="First Name" class="form-control"  type="text">
     </div>
+    <label id="ment_fname_error"></label>
   </div>
 </div>
 
@@ -104,8 +105,9 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+  <input name="ment_lname" id="ment_lname" placeholder="Last Name" class="form-control"  type="text">
     </div>
+  <label id="ment_lname_error"></label>
   </div>
 </div>
 
@@ -115,23 +117,15 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+  <input name="email_id" id="email_id" placeholder="E-Mail Address" class="form-control"  type="email">
     </div>
+    <label id="email_id_error"></label>
   </div>
 </div>
 
 
 <!-- Text input-->
        
-<div class="form-group">
-  <label class="col-md-4 control-label">Phone #</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
-    </div>
-  </div>
-</div>
 
 <!-- Text input-->
       
@@ -142,6 +136,7 @@
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
   <input name="address" placeholder="Address" class="form-control" type="text">
     </div>
+    <label id="address_error"></label>
   </div>
 </div>
 
@@ -152,124 +147,36 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="city" placeholder="city" class="form-control"  type="text">
+  <input name="location" placeholder="Location" class="form-control"  type="text">
     </div>
+    <label id="location_error"></label>
   </div>
 </div>
 
 <!-- Select Basic -->
    
-<div class="form-group"> 
-  <label class="col-md-4 control-label">State</label>
-    <div class="col-md-4 selectContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="state" class="form-control selectpicker" >
-      <option value=" " >Please select your state</option>
-      <option>Alabama</option>
-      <option>Alaska</option>
-      <option >Arizona</option>
-      <option >Arkansas</option>
-      <option >California</option>
-      <option >Colorado</option>
-      <option >Connecticut</option>
-      <option >Delaware</option>
-      <option >District of Columbia</option>
-      <option> Florida</option>
-      <option >Georgia</option>
-      <option >Hawaii</option>
-      <option >daho</option>
-      <option >Illinois</option>
-      <option >Indiana</option>
-      <option >Iowa</option>
-      <option> Kansas</option>
-      <option >Kentucky</option>
-      <option >Louisiana</option>
-      <option>Maine</option>
-      <option >Maryland</option>
-      <option> Mass</option>
-      <option >Michigan</option>
-      <option >Minnesota</option>
-      <option>Mississippi</option>
-      <option>Missouri</option>
-      <option>Montana</option>
-      <option>Nebraska</option>
-      <option>Nevada</option>
-      <option>New Hampshire</option>
-      <option>New Jersey</option>
-      <option>New Mexico</option>
-      <option>New York</option>
-      <option>North Carolina</option>
-      <option>North Dakota</option>
-      <option>Ohio</option>
-      <option>Oklahoma</option>
-      <option>Oregon</option>
-      <option>Pennsylvania</option>
-      <option>Rhode Island</option>
-      <option>South Carolina</option>
-      <option>South Dakota</option>
-      <option>Tennessee</option>
-      <option>Texas</option>
-      <option> Uttah</option>
-      <option>Vermont</option>
-      <option>Virginia</option>
-      <option >Washington</option>
-      <option >West Virginia</option>
-      <option>Wisconsin</option>
-      <option >Wyoming</option>
-    </select>
-  </div>
-</div>
-</div>
 
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Zip Code</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
-    </div>
-</div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">Website or domain name</label>  
-   <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-  <input name="website" placeholder="Website or domain name" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-
-<!-- radio checks -->
- <div class="form-group">
-                        <label class="col-md-4 control-label">Do you have hosting?</label>
-                        <div class="col-md-4">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="yes" /> Yes
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="no" /> No
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-<!-- Text area -->
-  
-<div class="form-group">
-  <label class="col-md-4 control-label">Project Description</label>
+  <label class="col-md-4 control-label">Experience</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        	<textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
+  <input name="Experience" placeholder="Experience" class="form-control"  type="text">
+    </div>
+</div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Interests</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        
+        	<input type="checkbox" name="interests" value="sports">Sports</input><br>
+          <input type="checkbox" name="interests" value="dance">Dance</input> <br>
+          <input type="checkbox" name="interests" value="cooking">Cooking</input> <br>
+          <input type="checkbox" name="interests" value="arts">Arts</input> <br>
   </div>
   </div>
 </div>
@@ -280,7 +187,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" >Register <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
 
