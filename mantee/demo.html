@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Feedback form</title>
+    <link rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../js/star-rating.js" type="text/javascript"></script>
+<body>
+<h1><center>FEEDBACK FORM</h1></center>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Contact Us Today!</legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Date of integratioin</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+  <input  name="first_name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Name of mentor</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="last_name" placeholder="Mentor name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">Name of mentee</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="last_name" placeholder="Mentee name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       
+
+
+<!-- Text input-->
+      
+<div class="form-group">
+  <label class="col-md-4 control-label">Summary</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+ <textarea class="form-control" name="comment" placeholder="Summary"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label">Achievements</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+  <input name="city"  class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div align="center" class="container">
+<form>
+	<input id="input-21b" value="4" type="number" class="rating" min=0 max=5 step=0.2 data-size="md">
+</form>
+</div>
+<div class="form-group">
+                        <label class="col-md-4 control-label">Schedule Meeting</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="yes" /> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="no" /> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- Text area -->
+  
+<div class="form-group">
+  <label class="col-md-4 control-label"> Any comments</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        	<textarea class="form-control" name="comment" placeholder="Any comments"></textarea>
+  </div>
+  </div>
+</div>
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+<hr>
+<script>
+    jQuery(document).ready(function () {
+        $("#input-21f").rating({
+            starCaptions: function(val) {
+                if (val < 3) {
+                    return val;
+                } else {
+                    return 'high';
+                }
+            },
+            starCaptionClasses: function(val) {
+                if (val < 3) {
+                    return 'label label-danger';
+                } else {
+                    return 'label label-success';
+                }
+            },
+            hoverOnClear: false
+        });
+        
+        $('#rating-input').rating({
+              min: 0,
+              max: 5,
+              step: 1,
+              size: 'lg',
+              showClear: false
+           });
+           
+        $('#btn-rating-input').on('click', function() {
+            $('#rating-input').rating('refresh', {
+                showClear:true, 
+                disabled: !$('#rating-input').attr('disabled')
+            });
+        });
+        
+        
+        $('.btn-danger').on('click', function() {
+            $("#kartik").rating('destroy');
+        });
+        
+        $('.btn-success').on('click', function() {
+            $("#kartik").rating('create');
+        });
+        
+        $('#rating-input').on('rating.change', function() {
+            alert($('#rating-input').val());
+        });
+        
+        
+        $('.rb-rating').rating({'showCaption':true, 'stars':'3', 'min':'0', 'max':'3', 'step':'1', 'size':'xs', 'starCaptions': {0:'status:nix', 1:'status:wackelt', 2:'status:geht', 3:'status:laeuft'}});
+    });
+</script>
+</div>  
+</body>
+</html>
