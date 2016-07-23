@@ -11,7 +11,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Creative - Bootstrap Admin Template</title>
+    <title>Katalyst</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -56,15 +56,15 @@
             
 
             <!--logo start-->
-            <a href="index.html" class="logo">KATALYST</a>
+            <a href="index.php" class="logo">KATALYST</a>
             <!--logo end-->
 
             <div class="nav search-row" id="top_menu">
                 <!--  search form start -->
                 <ul class="nav top-menu"> 
-          <li><a href="www.index.html">Home</a></li>
-          <li><a href="">About us</a></li>
-          <li><a href="">Contact us</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="index.php#aboutus">About us</a></li>
+          <li><a href="index.php#contactus">Contact us</a></li>
       
                 <!--  search form end -->               
 
@@ -95,8 +95,10 @@
       <body>
       <br><br><br><br><br>
       <h2 align="center">Login<h2>
-      <form class="form-horizontal" method="POST" align="center" >
-  <div align="center" class="form-group">
+      <form class="form-horizontal" method="POST" >
+       <fieldset>
+      <legend>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOGIN</legend>
+  <div  class="form-group">
     <label for="username" class="col-sm-2 control-label">Email</label>
     <div class="col-lg-4">
       <input type="email" class="form-control" name="username" id="username" placeholder="Email">
@@ -122,6 +124,7 @@
       <button type="submit" name = "submit1" class="btn btn-default" >Sign in</button>
     </div>
   </div>
+  </fieldset>
 </form>
 
 

@@ -8,7 +8,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Creative - Bootstrap Admin Template</title>
+    <title>Katalyst</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -61,9 +61,9 @@
             <div class="nav search-row" id="top_menu">
                 <!--  search form start -->
                 <ul class="nav top-menu"> 
-					<li><a href="www.index.html">Home</a></li>
-					<li><a href="">About us</a></li>
-					<li><a href="">Contact us</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="#aboutus">About us</a></li>
+					<li><a href="#contactus">Contact us</a></li>
 			
                 <!--  search form end -->               
 
@@ -105,19 +105,19 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="../Katalyst/img/1.jpg" >
+      <img src="../IntegratedCode/img/1.jpg" >
     </div>
 
     <div class="item">
-      <img src="../Katalyst/img/2.jpg" >
+      <img src="../IntegratedCode/img/2.jpg" >
     </div>
 
     <div class="item">
-      <img src="../Katalyst/img/3.jpg" >
+      <img src="../IntegratedCode/img/3.jpg" >
     </div>
 
     <div class="item">
-      <img src="../Katalyst/img/4.jpg">
+      <img src="../IntegratedCode/img/4.jpg">
     </div>
   </div>
 
@@ -131,26 +131,49 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div id="aboutus" class="text-center p-a-20">
-  <p>Katalyst aims to be a leader in this continual elevation and transformation of young women from low income communities to lead change in their professional and personal  spheres of life. Katalyst was set up in 2007 under the aegis of Human Capital for Third Sector, a section 25 not-for-profit company founded in 2005. Human Capital for Third Sector known under the brand, Third Sector Partners (www.thirdsectorpartners.com) is India’s first executive search firm for the social sector.</p>
+</section>
+<div id="aboutus">
+<br><br>
+<p class="center"><center><h2><b>ABOUT US</b></h2></center></p>
+  Katalyst aims to be a leader in this continual elevation and transformation of young women from low income communities to lead change in their professional and personal  spheres of life. Katalyst was set up in 2007 under the aegis of Human Capital for Third Sector, a section 25 not-for-profit company founded in 2005. Human Capital for Third Sector known under the brand, Third Sector Partners (www.thirdsectorpartners.com) is India’s first executive search firm for the social sector.<br>
 
-<p>To achieve this, Katalyst provides an enabling environment to enhance the employability of girl students pursuing professional degrees or courses. Katalyst does this through specific interventions such as skill enhancement, mentor support, assistance with internships and exposure to corporate life.</p>
+To achieve this, Katalyst provides an enabling environment to enhance the employability of girl students pursuing professional degrees or courses. Katalyst does this through specific interventions such as skill enhancement, mentor support, assistance with internships and exposure to corporate life.<br>
 
-<b>WHY KATALYST?</b>
-<p>Investing in education is the most effective way of reducing poverty. And, investing in Secondary School Education yields high dividends. Women account for one-half of the potential talent base throughout the world and therefore, over time, a nation’s competitiveness depends significantly on whether and how it educates and utilizes its female talent. The educational achievements of women can have ripple effects within the family and across generations. Hence, we at Katalyst are focusing on girls’ education in tertiary sector.<p>
+<center><b>WHY KATALYST?</b></center>
+Investing in education is the most effective way of reducing poverty. And, investing in Secondary School Education yields high dividends. Women account for one-half of the potential talent base throughout the world and therefore, over time, a nation’s competitiveness depends significantly on whether and how it educates and utilizes its female talent. The educational achievements of women can have ripple effects within the family and across generations. Hence, we at Katalyst are focusing on girls’ education in tertiary sector.These “Katalysts” will then catalyze positive change and influence society creating a ripple effect and leading to economic and social empowerment.<br>
 
-<p>These “Katalysts” will then catalyze positive change and influence society creating a ripple effect and leading to economic and social empowerment.</p>
-
-<b>PRIMARY OBJECTIVES OF THE PROGRAM</b>
-<p>To enhance employability of the girl students thereby marking their foot prints in the managerial cadre of India Inc.
-To encourage and empower talented girls to take on roles of leadership and innovation and participate in the process of community building.
-To increase the management bandwidth of corporate India through the talent pool thus created, giving India Inc. access to an untapped talent base.
-To raise their capacity to command a higher annual salary.</p>
-<b>SELECTION CRITERIA</b>
-<p>Girl students pursuing professional degrees like Engineering, Architecture, Medicine and Chartered Accountants preferably from colleges of repute.</p>
-<p>Prospective students should have a  good academic track record
-Family income of less than Rs. 2 lakhs per year.</p>
+<center><b>PRIMARY OBJECTIVES OF THE PROGRAM</b></center>
+To enhance employability of the girl students thereby marking their foot prints in the managerial cadre of India Inc.
+To encourage and empower talented girls to take on roles of leadership and innovation and participate in the process of community building. To increase the management bandwidth of corporate India through the talent pool thus created, giving India Inc. access to an untapped talent base. To raise their capacity to command a higher annual salary.<br>
+<center><b>SELECTION CRITERIA</b></center>
+Girl students pursuing professional degrees like Engineering, Architecture, Medicine and Chartered Accountants preferably from colleges of repute.
+Prospective students should have a  good academic track record
+Family income of less than Rs. 2 lakhs per year.<br>
 </div>
+<br><br><br><br>
+ <section class="wrapp-office clearfix dark-bg">
+                <div class="container" id="contactus">
+                <p class="center"><center><h2><b>CONTACT US</b></h2></center></p>
+                        <div class="row">
+                        <div class="col-sm-4 col-xs-6 adress">
+                        <h3 class="city">Mumbai</h3>
+                        <p>502 A Wing Aurus Chambers, S S Amrutwar Marg, Worli, Mumbai 400 025. <br/> 
+                        Contact Person : Anajli Hari</p>
+                        <p>022-4349 3333  91-98201 80265</p>
+                        <p><a href="mailto:anjali@thirdsectorpartners.com">anjali@thirdsectorpartners.com</a></p>
+                        </div>
+
+                        <div class="col-sm-4 col-xs-6 adress">
+                        <h3 class="city">Banglore</h3>
+                        <p>Saroj  No 49, Apt no 303, Dollar layout, 4th main, <br/> 
+                        BTM -2nd stage,  Bangalore -560076. <br/>
+                        Contact-Person : R VijayaThilakam</p>
+                        <p>91-94812 80162</p>
+                        <p><a href="mailto:vijaya@thirdsectorpartners.com">vijaya@thirdsectorpartners.com</a></p>
+                        </div>
+                        <div class="col-sm-4 col-xs-6 adress"><h3 class="city">Pune</h3><p>+91-9960835156</p><p><a href="mailto:megha@thirdsectorpartners.com">megha@thirdsectorpartners.com</a></p></div></div>
+                </div>
+            </section>
     <!-- javascripts -->
     <script src="js/jquery.js"></script>
 	<script src="js/jquery-ui-1.10.4.min.js"></script>
