@@ -61,9 +61,9 @@
             <div class="nav search-row" id="top_menu">
                 <!--  search form start -->
                 <ul class="nav top-menu"> 
-          <li><a href="www.index.html">Home</a></li>
-          <li><a href="">About us</a></li>
-          <li><a href="">Contact us</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#aboutus">About us</a></li>
+          <li><a href="index.html#contactus">Contact us</a></li>
       
                 <!--  search form end -->               
 
@@ -83,7 +83,7 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Contact Us Today!</legend>
+<legend>Sign Up as mentor!</legend>
 
 <!-- Text input-->
 
