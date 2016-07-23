@@ -101,7 +101,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   
-				  <li class="sub-menu">
+          <li class="sub-menu">
                       <a href="" class="">
                           <i class="icon_document_alt"></i>
                           <span>Requests</span>
@@ -156,14 +156,23 @@
 					<h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-						<li><i class="icon_document_alt"></i>Requests</li>						  	
+						<li><i class="icon_genius"></i>Pairing</li>						  	
 					</ol>
 				</div>
 			</div>  
             </section>
-            <div class="">
+            <div>
+            
                 <!-- call php code that shows notifications-->
-
+                <?php
+include('connect.php'); 
+ $sql="SELECT * from menteeinfo WHERE menteeinfo_id not in (select mentee_id from pairtable)";
+$res=mysqli_query($connect ,$sql);
+  while($row = mysqli_fetch_array($res))
+  { 
+echo $row['firstname'];
+  }
+?>
             </div>
             </section>
   <!-- container section start -->
