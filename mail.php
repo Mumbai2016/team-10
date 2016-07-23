@@ -1,6 +1,6 @@
 <?php
 // the message
-function($name,$sub,$msg)
+function mail($name,$sub,$msg)
 {
 
 
