@@ -106,7 +106,7 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input  name="firstname" placeholder="First Name" class="form-control"  type="text">
-    </div>
+    <label id="firstname_error"></label></div>
   </div>
 </div>
 
@@ -118,7 +118,7 @@
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="lastname" placeholder="Last Name" class="form-control"  type="text">
-    </div>
+  <label id="lastname_error"></label></div>
   </div>
 </div>
 
@@ -131,6 +131,7 @@
   <input name="emailid" placeholder="E-Mail Address" class="form-control"  type="text">
     </div>
   </div>
+  <label id="emailid_error"></label></div>
 </div>
 
 <div class="form-group">
@@ -141,6 +142,7 @@
   <input name="dob" placeholder="dob" class="form-control" type="text">
     </div>
   </div>
+  <label id="dob_error"></label></div>
 </div>
 
 
@@ -154,6 +156,7 @@
   <input name="comtact_no" placeholder="(845)555-1212" class="form-control" type="text">
     </div>
   </div>
+  <label id="firstname_error"></label></div>
 </div>
 
 <!-- Text input-->
@@ -166,6 +169,17 @@
   <input name="address" placeholder="Address" class="form-control" type="text">
     </div>
   </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Location</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="location" placeholder="location" class="form-control"  type="text">
+    </div>
+  </div>
+  <label id="firstname_error"></label></div>
 </div>
 
 <div class="form-group">
