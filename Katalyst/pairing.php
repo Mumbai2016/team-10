@@ -161,18 +161,64 @@
 				</div>
 			</div>  
             </section>
+            <script type="text/javascript">
+function sendIt() {
+var info = document.getElementById("Hello").value;
+window.location.replace('a.php?info=' + info);
+}
+function send1() {
+var info1 = document.getElementById("branch").value;
+window.location.replace(document.URL +'&info1=' + info1);
+}
+</script>
             <div>
-            
+<form action="save.php">
                 <!-- call php code that shows notifications-->
-                <?php
+                <select id="Hello">
+                 
+<?php
+
 include('connect.php'); 
+  
  $sql="SELECT * from menteeinfo WHERE menteeinfo_id not in (select mentee_id from pairtable)";
+
 $res=mysqli_query($connect ,$sql);
+
+
+
   while($row = mysqli_fetch_array($res))
-  { 
-echo $row['firstname'];
+  {
+echo "<option name="mentee" value=\"Mentee\">" . $row['firstname'] . "</option>";
   }
+  ?>
+
+
+   
+ 
+</select>
+Mentors:<select name="company" id="company" selectedIndex="<?php echo $a; ?>" onchange="sendIt(this.value)">
+<?php
+ include('connect.php');
+ $a=@$_GET['info'];
+$sql = "select * from mentorinfo where location=$a";  
+
+$res=mysqli_query($connect ,$sql);
+
+
+
+  while($row = mysqli_fetch_array($res))
+  {
+echo "<option value=\"Mentor\">" . $row['firstname'] . "</option>";
+  }
+
 ?>
+</select>
+
+  <input type="submit" value="Submit">
+</form>
+
+
+          
             </div>
             </section>
   <!-- container section start -->
