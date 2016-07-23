@@ -49,6 +49,12 @@ a:active,
 a:hover {
   outline: 0;
 }
+#aboutus{
+  width: 800px;
+  text-align: justify;
+  margin-left: 300px;
+  color: black;
+}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
