@@ -161,8 +161,32 @@
 				</div>
 			</div>  
             </section>
-            <div>
-                <!-- call php code that shows notifications-->
+           <div id="main">
+              <table border="1px solid black">
+                <th> <tr> Student Name</tr> <tr>Mentor Name</tr> <tr> Grade </tr><tr>Payout</tr></th>
+                <tr>
+                <?php 
+                 include "connect.php";
+                 $sql="";
+                 $sql1="";
+                 $result= mysqli_query($conn, $sql);
+                 $result1= mysqli_query($conn, $sql1);
+                  if (mysqli_num_rows($result1) >= 0) {
+                while($row = mysqli_fetch_assoc($result1)) {
+                for($x = 0; $x < 30; $x++) $arr[$x]=row[''];
+                }
+            }
+                 if (mysqli_num_rows($result) > 0) {
+                 while($row = mysqli_fetch_assoc($result)) {
+                echo "<td>".row['']."</td><td>".row['']."</td>";
+                for($x = 0; $x < ; $x++) 
+                echo "<td>".arr[x]."</td>" 
+              }
+            }
+                ?>
+                </tr>
+              </table>
+
             </div>
             </section>
   <!-- container section start -->

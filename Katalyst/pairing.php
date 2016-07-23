@@ -50,24 +50,18 @@
   <body>
   <!-- container section start -->
   <section id="container" class="">
-     
-      
       <header class="header dark-bg">
-            
-
             <!--logo start-->
             <a href="index.html" class="logo">KATALYST</a>
             <!--logo end-->
-
             <div class="nav search-row" id="top_menu">
                 <!--  search form start -->
                 <ul class="nav top-menu"> 
                     <li><a href="www.index.html">Home</a></li>
                     <li><a href="">About us</a></li>
                     <li><a href="">Contact us</a></li>
-            
+                    </ul>
                 <!--  search form end -->               
-
             </div>
             <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
@@ -87,8 +81,11 @@
                             <li>
                                 <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
-                         
+
+                            </ul>
+                         </li>
                 </ul>
+
             </div>
 
       </header>      
@@ -161,67 +158,36 @@
 				</div>
 			</div>  
             </section>
-            <script type="text/javascript">
-function sendIt() {
-var info = document.getElementById("Hello").value;
-window.location.replace('a.php?info=' + info);
-}
-function send1() {
-var info1 = document.getElementById("branch").value;
-window.location.replace(document.URL +'&info1=' + info1);
-}
-</script>
-            <div>
-<form action="save.php">
-                <!-- call php code that shows notifications-->
-                <select id="Hello">
-                 
-<?php
+            <div id="main">
+            	<table border="1px solid black">
+            		<tr>
+            		<?php 
+            		 include "connect.php";
+            		 $sql="";
+            		 $sql1="";
+            		 $result= mysqli_query($conn, $sql);
+            		 $result1= mysqli_query($conn, $sql1);
 
-include('connect.php'); 
-  
- $sql="SELECT * from menteeinfo WHERE menteeinfo_id not in (select mentee_id from pairtable)";
+            		 if (mysqli_num_rows($result1) >= 0) {
+    					// output data of each row
+    					while($row = mysqli_fetch_assoc($result1)) {
+    						for($x = 0; $x < 30; $x++) $arr[$x]=row[''];
+            		}
+            }
+            		 if (mysqli_num_rows($result) > 0) {
+    					// output data of each row
+    					while($row = mysqli_fetch_assoc($result)) {
+    						echo "<td>".row['']."</td> <td> <select>";
+    						 for($x = 0; $x < 30; $x++) 
+    						 	echo "<option value=".$arr[$x]."></option></select></td>" 
+    					}
+    				}
+            		?>
+            		</tr>
+            	</table>
 
-$res=mysqli_query($connect ,$sql);
-
-
-
-  while($row = mysqli_fetch_array($res))
-  {
-echo "<option name="mentee" value=\"Mentee\">" . $row['firstname'] . "</option>";
-  }
-  ?>
-
-
-   
- 
-</select>
-Mentors:<select name="company" id="company" selectedIndex="<?php echo $a; ?>" onchange="sendIt(this.value)">
-<?php
- include('connect.php');
- $a=@$_GET['info'];
-$sql = "select * from mentorinfo where location=$a";  
-
-$res=mysqli_query($connect ,$sql);
-
-
-
-  while($row = mysqli_fetch_array($res))
-  {
-echo "<option value=\"Mentor\">" . $row['firstname'] . "</option>";
-  }
-
-?>
-</select>
-
-  <input type="submit" value="Submit">
-</form>
-
-
-          
             </div>
-            </section>
-  <!-- container section start -->
+           </section> <!-- container section start -->
 
     <!-- javascripts -->
     <script src="js/jquery.js"></script>

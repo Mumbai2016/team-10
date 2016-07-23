@@ -162,7 +162,54 @@
 			</div>  
             </section>
             <div>
-                <!-- call php code that shows notifications-->
+               <form class="well form-horizontal" action="mentor_valid.php" method="post"  id="mentor_signup">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Event Add</legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Date of the event</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+  <input name="ment_fname" id="ment_fname"  class="form-control"  type="date">
+    </div>
+ 
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Event Title</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
+  <input name="ment_lname" id="ment_lname"  class="form-control"  type="text">
+    </div>
+</div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" >Event Description</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-tasks"></i></span>
+  <input name="ment_lname" id="ment_lname"  class="form-control"  type="textarea">
+    </div>
+
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Add event <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
             </div>
             </section>
   <!-- container section start -->
