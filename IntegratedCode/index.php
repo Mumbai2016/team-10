@@ -71,7 +71,7 @@
 			<div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
                 <ul class="nav pull-right top-menu">
-                <li><a href="#"><span >Login</span></a></li>
+                <li><a href="logon.php"><span >Login</span></a></li>
                 <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span>Sign Up</span>
