@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2016 at 01:35 PM
+-- Generation Time: Jul 23, 2016 at 02:06 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -31,8 +31,24 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `feedback_rate` int(11) NOT NULL,
   `Comments` text NOT NULL,
   `feedback_date` text NOT NULL,
-  `feedbcak_time` text NOT NULL,
+  `feedback_time` text NOT NULL,
+  `feedback_duration` text NOT NULL,
+  `points planned` text NOT NULL,
+  `feedback_mentor_mentee` text NOT NULL,
+  `action_plan` text NOT NULL,
   PRIMARY KEY (`feedback_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hobby`
+--
+
+CREATE TABLE IF NOT EXISTS `hobby` (
+  `hobby_id` int(11) NOT NULL AUTO_INCREMENT,
+  `hobby_name` text NOT NULL,
+  PRIMARY KEY (`hobby_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -92,7 +108,8 @@ CREATE TABLE IF NOT EXISTS `mentorinfo` (
   `interests` text NOT NULL,
   `mentor_confirm` text NOT NULL,
   PRIMARY KEY (`mentorinfo_id`),
-  KEY `mentor_id` (`mentor_id`)
+  KEY `mentor_id` (`mentor_id`),
+  KEY `hobby_id` (`hobby_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -175,6 +192,7 @@ ALTER TABLE `menteeinfo`
 -- Constraints for table `mentorinfo`
 --
 ALTER TABLE `mentorinfo`
+  ADD CONSTRAINT `hobbies` FOREIGN KEY (`hobby_id`) REFERENCES `hobby` (`hobby_id`),
   ADD CONSTRAINT `Mentee Info` FOREIGN KEY (`mentor_id`) REFERENCES `users` (`user_id`);
 
 --
