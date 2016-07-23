@@ -7,7 +7,6 @@
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
-
     <title>Creative - Bootstrap Admin Template</title>
 
     <!-- Bootstrap CSS -->    
@@ -149,49 +148,87 @@
             </section>
   <!-- container section start -->
   <div align="center" class="container">
-  <h2>Form</h2>
-    1. Name of mentee
-    <input type="text" name="name id="name" placeholder="Enter the full name="><br>
-    2. Date and time of interaction
-    <input type="date" name="date" id="date" placeholder="dd-mm-yyyy"><br>
-    <input type="time" name="time" id="time" placeholder="hh:mm"><br><br>
-    3.How Do you rate the quality of the interaction?</p>
-  <form role="form">
-    <label class="radio-inline">
-      <input type="radio" name="optradio" value=5>Good
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="optradio" value=2>can be better
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="optradio" value=1>Poor
-    </label><br><br>
+   <form class="well form-horizontal" action="mentor_valid.php" method="post"  id="mentor_signup">
+<fieldset>
 
-     4.Were the goals of the interaction met?</p>
-  <form role="form">
-    <label class="radio-inline">
-      <input type="radio" name="optradio" value=5>Yes
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="optradio"vale=2> Can't say
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="optradio" value=1>No
-    </label><br>
+<!-- Form Name -->
+<legend>Feedback Form</legend>
 
-     5.Is there any improvement in the mentee?</p>
-  <form role="form">
-    <label class="radio-inline">
-      <input type="radio" name="optradio"value=5>Yes
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="optradio" value=2> No
-    </label></form><br>
-    6.Any comments
-    <form role="form">
-    <input type="textarea" form_id="form" name="comment" id="comment"><br>
-  </form>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">1. Name of mentee</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input name="name" id="name" placeholder="Enter full name" class="form-control"  type="text">
+    </div>
+  </div>
 </div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >2. Date and time of meeting</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <input name="date" id="date" placeholder="DD-MM-YYYY" class="form-control"  type="date">
+  <input name="time" id="time" placeholder="HH:MM" class="form-control"  type="time">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">3.How Do you rate the quality of the interaction?</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <input type="radio" name="optradio" value="5">Good</input>
+  <input type="radio" name="optradio" value="2">Can be Better</input>
+  <input type="radio" name="optradio" value="1">Poor</input>
+  <br>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">4.Were the goals of the interaction met?</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <input type="radio" name="optradio" value="5">Yes</input>
+  <input type="radio" name="optradio" value="2">No</input>
+  <input type="radio" name="optradio" value="1">Can't Say</input>
+  <br>
+    </div>
+  </div>
+</div>
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label">5.Is there any improvement in the mentee?</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <input type="radio" name="optradio" value="5">Yes</input>
+  <input type="radio" name="optradio" value="2">No</input>
+  
+  <br>
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">6. Any Comments</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input name="name" id="name" placeholder="" class="form-control"  type="textarea">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+      
+
+
+</fieldset>
+</form>
 
     <!-- javascripts -->
     <script src="js/jquery.js"></script>
