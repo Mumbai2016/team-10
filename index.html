@@ -12,7 +12,7 @@
 
     <!-- Bootstrap CSS -->    
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-   
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="owl_carousel/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="owl_carousel/owl-carousel/owl.theme.css">
 <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
@@ -78,7 +78,7 @@
 
                                 <i class="glyphicon glyphicon-user"></i>
                             
-                            <span>Admin</span>
+                            <span>Mentee</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -100,45 +100,46 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
-                  
+                  <li class="active">
+                      <a class="" href="index.html">
+                          <i class="icon_house_alt"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
 				  <li class="sub-menu">
-                      <a href="" class="">
+                      <a href="feedback.php" class="">
                           <i class="icon_document_alt"></i>
-                          <span>Requests</span>
+                          <span>Feedback</span>
                          
                       </a>
               
                   </li>       
                   
                   <li>
-                      <a class="" href="pairing.php">
+                      <a class="" href="widgets.html">
                           <i class="icon_genius"></i>
-                          <span>Pairing</span>
+                          <span>Request for meeting</span>
                       </a>
                   </li>
                   <li>                     
                       <a class="" href="chart-chartjs.html">
                           <i class="icon_piechart"></i>
-                          <span>Reports</span>
+                          <span>Progrees Report</span>
                           
                       </a>
                                          
                   </li>
-                  <li>                     
-                      <a class="" href="payouts.html">
-                          <i class="fa fa-usd"></i>
-                          <span>Payouts</span>
-                          
-                      </a>               
-                  </li>
-                  <li>                     
-                      <a class="" href="newsletter.html">
-                          <i class="icon_document_alt"></i>
-                          <span>Newsletter</span>
+				   <li>                     
+                      <a class="" href="update_profile.php">
+                          <i class="icon_piechart"></i>
+                          <span>Edit_profile</span>
                           
                       </a>
                                          
                   </li>
+				  
+                  
+                 
                              
                  
               </ul>
@@ -154,17 +155,11 @@
 			  <div class="row">
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
-					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-						<li><i class="icon_document_alt"></i>Requests</li>						  	
-					</ol>
+					
 				</div>
-			</div>  
+			</div>
+              
             </section>
-            <div class="">
-                <!-- call php code that shows notifications-->
-
-            </div>
             </section>
   <!-- container section start -->
 
