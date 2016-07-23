@@ -1,3 +1,6 @@
+<?php
+	include 'login.php';
+?>
    <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,7 +73,7 @@
       <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
                 <ul class="nav pull-right top-menu">
-                <li><a href="#"><span >Login</span></a></li>
+                <li><a href="login.php"><span >Login</span></a></li>
                 <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span>Sign Up</span>
@@ -116,7 +119,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default" onclick="doLogin()">Sign in</button>
+      <button type="submit" name = "submit1" class="btn btn-default" >Sign in</button>
     </div>
   </div>
 </form>
