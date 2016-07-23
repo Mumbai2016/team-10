@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require "connect.php";
 	function doLogin($username , $password)
 	{
@@ -8,10 +9,13 @@
 		if (mysqli_num_rows($result) == 1)
 		{
 			$role_id ;
+			$user_id;
 			while($row = mysqli_fetch_assoc($result))
 			{
 				$role_id = $row['role_id'];
+				$user_id = $row['user_id'];
 			}		
+			$_SESSION["userId"] = $user_id;
 			if($role_id == 1)
 			{
 					echo "<script>";
