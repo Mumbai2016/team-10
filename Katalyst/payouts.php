@@ -1,25 +1,3 @@
-<?php
-	require "connect.php";
-	function pairing($mentor_id,$mentee_id)
-	{
-		global $conn;
-		$sql="INSERT into pairtable (mentor_id,mentee_id) 
-		values(".$mentor_id.",".$mentee_id.")";
-		echo $sql;	 
-		$qury=mysqli_query($conn,$sql);
-		if(!$qury)
-		{	 
-			echo "Failed to connect to MySQL: " . mysqli_connect_error();
-		}
-			
-		else
-		{
-			echo "<script>";
-			echo "window.location.href =''";
-			echo "</script>";	
-		}
-	}
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,30 +45,29 @@
       <script src="js/respond.min.js"></script>
       <script src="js/lte-ie7.js"></script>
     <![endif]-->
-<style type="text/css">
-	tr, td{
-		margin: 5px,5px,5px,5px;
-		padding: 5px,5px,5px,5px;
-	}
-</style>
-
   </head>
 
   <body>
   <!-- container section start -->
   <section id="container" class="">
+     
+      
       <header class="header dark-bg">
+            
+
             <!--logo start-->
             <a href="index.html" class="logo">KATALYST</a>
             <!--logo end-->
+
             <div class="nav search-row" id="top_menu">
                 <!--  search form start -->
                 <ul class="nav top-menu"> 
                     <li><a href="www.index.html">Home</a></li>
                     <li><a href="">About us</a></li>
                     <li><a href="">Contact us</a></li>
-                    </ul>
+            
                 <!--  search form end -->               
+
             </div>
             <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
@@ -110,11 +87,8 @@
                             <li>
                                 <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
-
-                            </ul>
-                         </li>
+                         
                 </ul>
-
             </div>
 
       </header>      
@@ -182,77 +156,46 @@
 					<h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-						<li><i class="icon_genius"></i>Pairing</li>						  	
+						<li><i class="fa fa-usd"></i>Payouts</li>						  	
 					</ol>
 				</div>
 			</div>  
             </section>
-            <div id="main">
-            	
-            		<?php 
-            		 include "connect.php";
-            		 $sql="select firstname from menteeinfo where menee_id not in ( select mentee_id from pairtable where mentee_id in ( select menteeinfo_id from menteeinfo where menee_id in ( select user_id from users where role_id = 3)));";
-            		 $sql1="select ment_fname from mentor_info";
-            		 $result= mysqli_query($conn, $sql);
-            		 $result1= mysqli_query($conn, $sql1);
-            		 $arr = "";
-            		 if (mysqli_num_rows($result1) > 0) {
-    					// output data of each row
-    					$y = 0;
-    					while($row = mysqli_fetch_assoc($result1)) {
-    							$arr[$y]=$row['ment_fname'];
-    							$y++;
-            			}
-            		}
-            		
-            		 if (mysqli_num_rows($result) > 0) {
-    					// output data of each row
-    					
-    					while($row = mysqli_fetch_assoc($result)) {
-    						echo "<form>";
-    						echo "<table><tr>";
-    						echo "<td>".$row['firstname']."</td><td>";
-    						echo "<select name=\"abc\">";
-    						 foreach ($arr as $items) {
-    						 	echo "<option value=".$items.">".$items."</option>" ;
-    						 }	
-							 echo "</select></td>";
-							 $sql2="select menteeinfo_id from menteeinfo where firstname='".$row['firstname']."'";
-							 $result2= mysqli_query($conn, $sql2);
-							 $a=0;
-							 if (mysqli_num_rows($result2) > 0) {
-    							while($row = mysqli_fetch_assoc($result2)) {
-    							$a=$row['menteeinfo_id'];
-    							
-            			}
-            		}
-            		$mentor=0;
-            				if(isset($_GET['abc']))
-    						$mentor = $_REQUEST['abc'] ;
-  							$sql3="select mentorinfo_id from mentor_info where ment_fname='".$mentor."'";
-							 $result3= mysqli_query($conn, $sql3);
-							 $b=0;
-							 if (mysqli_num_rows($result3) > 0) {
-    							while($row = mysqli_fetch_assoc($result3)) {
-    							$b=$row['mentorinfo_id'];
+           <div id="main">
+              <table border="1px solid black">
+                
+                <?php 
+                 include 'connect.php';
+                 $flag=0;
+                 $sql="select firstname,menteeinfo_id from menteeinfo";
+                 $result= mysqli_query($conn, $sql);
+                  if (mysqli_num_rows($result) >= 0) {
+                      while($row = mysqli_fetch_assoc($result)) {
+                       
+                        $sql1 = "select ment_fname from mentor_info where mentorinfo_id in (select mentor_id from pairtable where mentee_id = ".$row["menteeinfo_id"].")";
+                        $result1 = mysqli_query($conn, $sql1);
+                        if (mysqli_num_rows($result1) >= 0){
+                       while($row1 = mysqli_fetch_assoc($result1)) {
+                        $flag=1;
+                        echo "<tr><th> Student Name</th> <th>Mentor Name</th> <th> Grade </th><th>Payout</th></tr>";
+                       echo "<td>".$row["firstname"]."</td>";
+                          echo "<td>".$row1["ment_fname"]."</td>";
+                          echo "<td>".rand(1,6)."</td>";
+                          echo "<td><input type=\"text\" name=\"Payout\"></td>";
+                        }
+                      }
+              echo "</tr>";
 
-            			}
-            		}
-            		$b++;
-							 echo "<td><button name=\"add\" value =\"add$b\">Add</button></td>	</tr>";
-							     						echo "<br/></form>";
-    					}
-    				}
-    				if(isset($_REQUEST['add'])){
-							 	pairing($a,$b);
-							 }
-
-            		?>
-            	
-            	</table>
+                    }
+                if($flag==0){echo "No Records Found";}
+                  }
+                ?>
+                
+              </table>
 
             </div>
-           </section> <!-- container section start -->
+            </section>
+  <!-- container section start -->
 
     <!-- javascripts -->
     <script src="js/jquery.js"></script>

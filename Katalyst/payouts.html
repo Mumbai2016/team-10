@@ -166,23 +166,22 @@
                 <th> <tr> Student Name</tr> <tr>Mentor Name</tr> <tr> Grade </tr><tr>Payout</tr></th>
                 <tr>
                 <?php 
-                 include "connect.php";
-                 $sql="";
-                 $sql1="";
+                 include 'connect.php';
+                 $sql="select firstname,menteeinfo_id from menteeinfo";
                  $result= mysqli_query($conn, $sql);
-                 $result1= mysqli_query($conn, $sql1);
-                  if (mysqli_num_rows($result1) >= 0) {
-                while($row = mysqli_fetch_assoc($result1)) {
-                for($x = 0; $x < 30; $x++) $arr[$x]=row[''];
-                }
-            }
-                 if (mysqli_num_rows($result) > 0) {
-                 while($row = mysqli_fetch_assoc($result)) {
-                echo "<td>".row['']."</td><td>".row['']."</td>";
-                for($x = 0; $x < ; $x++) 
-                echo "<td>".arr[x]."</td>" 
-              }
-            }
+                  if (mysqli_num_rows($result) >= 0) {
+                      while($row = mysqli_fetch_assoc($result)) {
+                       echo "<td>".$row["firstname"]."</td>";
+                        $sql1 = "select ment_fname from mentor_info where mentorinfo_id in (select mentor_id from pairtable where mentee_id = ".$row["menteeinfo_id"].")";
+                        $result1 = mysqli_query($conn, $sql1);
+                        while($row1 = mysqli_fetch_assoc($result1)) {
+                          echo "<td>".$row["ment_fname"]."</td>";
+                          echo "<td>".$rand(0,6)."</td>;
+                          echo "<td><input type="text" name="Payout"></td>";
+                        }
+                    }
+                    
+                  }
                 ?>
                 </tr>
               </table>
