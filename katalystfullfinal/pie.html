@@ -9,9 +9,11 @@
 </head>
 <body bgcolor="grey">
 
-  <canvas id="piechart" width="400" height="400"></canvas>
+  <canvas id="piechart" width="300" height="300"></canvas>
 
-   <canvas id="piechart1" width="400" height="400"></canvas>
+   <canvas id="piechart1" width="300" height="300"></canvas>
+
+   <canvas id="piechart2" width="200" height="80"></canvas>
   
   <script type="text/javascript">
     // Get the context of the canvas element we want to select
@@ -68,6 +70,33 @@
     };
 
     var myNewChart = new Chart(ctx).Pie(data,options);
+
+
+
+    var dData = function() {
+  return Math.round(Math.random() * 90) + 10
+};
+
+var barChartData = {
+  labels: ["dD 1", "dD 2", "dD 3", "dD 4", "dD 5", "dD 6", "dD 7"],
+  datasets: [{
+    fillColor: "rgba(0,60,100,1)",
+    strokeColor: "black",
+    data: [dData(), dData(), dData(), dData(), dData(), dData(), dData(), dData(), dData(), dData()]
+  }]
+}
+
+var index = 11;
+var ctx = document.getElementById("piechart2").getContext("2d");
+var barChartDemo = new Chart(ctx).Bar(barChartData, {
+  responsive: true,
+  barValueSpacing: 2
+});
+setInterval(function() {
+  barChartDemo.removeData();
+  barChartDemo.addData([dData()], "dD " + index);
+  index++;
+}, 3000);
 
   </script>
 </body>
