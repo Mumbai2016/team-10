@@ -19,21 +19,21 @@
 			if($role_id == 1)
 			{
 					echo "<script>";
-					echo "window.location.href ='admin.php'";
+					echo "window.location.href ='admin/admin.php'";
 					echo "</script>";
 			}
 				
 			else if($role_id == 2)
 			{
 					echo "<script>";
-					echo "window.location.href ='mentor.php'";
+					echo "window.location.href ='mentor/index.html'";
 					echo "</script>";
 			}
 				
 			else if($role_id == 3)
 			{
 					echo "<script>";
-					echo "window.location.href ='mentee.php'";
+					echo "window.location.href ='mentee/index.html'";
 					echo "</script>";
 			}	
 				
